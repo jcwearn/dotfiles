@@ -1,0 +1,5 @@
+*
+!.emacs
+!.emacs.d/packages.el
+!.gitignore
+!.zshrc
