@@ -13,6 +13,7 @@
     clojure-mode
     elixir-mode
     hlinum
+    js2-mode
     multi-term
     multi-web-mode
     neotree
