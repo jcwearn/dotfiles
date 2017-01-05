@@ -10,4 +10,7 @@ cd emacs-24.4
 ./configure
 make
 sudo make install
-rm -rf emacs-src
+
+rm -rf ~/emacs-src
+cp ~/dotfiles/.emacs
+cp -r ~/dotfiles/.emacs.d/
