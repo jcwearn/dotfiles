@@ -107,3 +107,9 @@ your recently and most frequently used commands.")
 (setq multi-term-program "/usr/local/bin/zsh")
 ;; bind multi-term to C-x t
 (global-set-key (kbd "C-x t") 'multi-term)
+
+(ido-mode 1)
+(ido-everywhere 1)
+
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
