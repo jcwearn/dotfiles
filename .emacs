@@ -94,7 +94,7 @@ your recently and most frequently used commands.")
 (setq mweb-default-major-mode 'html-mode)
 (setq mweb-tags
       '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-        (js-mode  "<script[^>]*>" "</script>")
+        (js2-mode  "<script[^>]*>" "</script>")
         (css-mode "<style[^>]*>" "</style>")))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
 (multi-web-global-mode 1)
