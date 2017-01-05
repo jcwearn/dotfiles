@@ -13,7 +13,7 @@
     clojure-mode
     elixir-mode
     hlinum
-    ido-ubiquitous-mode
+    ido-ubiquitous
     js2-mode
     json-mode
     multi-term
