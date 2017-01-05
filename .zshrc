@@ -26,12 +26,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear"
-alias emacs="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
-alias emcas="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
-alias ecmas="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
-alias enacs="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
-alias emasc="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
-alias eamcs="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="/usr/local/bin/emacs -nw"
+alias emcas="/usr/local/bin/emacs -nw"
+alias ecmas="/usr/local/bin/emacs -nw"
+alias enacs="/usr/local/bin/emacs -nw"
+alias emasc="/usr/local/bin/emacs -nw"
+alias eamcs="/usr/local/bin/emacs -nw"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias ducks='du -cks * | sort -rn | head'
 
