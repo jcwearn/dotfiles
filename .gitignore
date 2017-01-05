@@ -3,3 +3,4 @@
 !.emacs.d/packages.el
 !.gitignore
 !.zshrc
+!install_emacs24.4.sh
