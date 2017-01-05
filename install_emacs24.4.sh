@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 cd ~
 mkdir emacs-src && cd emacs-src
 wget http://mirror.team-cymru.org/gnu/emacs/emacs-24.4.tar.gz
