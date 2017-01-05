@@ -14,6 +14,7 @@
     elixir-mode
     hlinum
     js2-mode
+    json-mode
     multi-term
     multi-web-mode
     neotree
