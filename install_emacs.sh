@@ -1,13 +1,12 @@
 #!/bin/bash
 
 check_emacs_installed() {
-    program="emacs"
-    condition=$(which $program 2>/dev/null | grep -v "not found" | wc -l)
-    if [ $condition -eq 0 ] ; then
-	echo "$program is not installed"
-	emacs_installed=false
-    else
+    which emacs &> /dev/null
+    if [ $? -eq 0 ] ; then
+	echo "Emacs is already installed."
 	emacs_installed=true
+    else
+	emacs_installed=false
     fi
 }
 
