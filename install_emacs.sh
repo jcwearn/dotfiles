@@ -53,7 +53,7 @@ install_emacs_config() {
 
 check_emacs_installed
 echo "Emacs installed? $emacs_installed"
-if [ $emacs_installed ]; then
+if [ $emacs_installed = true ]; then
     find_emacs_version
     minimum_version="24.4"
     if [ "$emacs_version" -gt "$minimum_version" ]; then
