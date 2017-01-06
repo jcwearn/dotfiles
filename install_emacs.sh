@@ -32,7 +32,8 @@ install_emacs() {
         ./configure
         make
         sudo make install
-        rm -rf ~/emacs-src
+	cd ../../
+        rm -rf emacs-src
     fi
 }
 
