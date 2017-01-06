@@ -26,8 +26,9 @@ install_emacs() {
         tar xvf emacs-24.4.tar.gz
 
 	sudo apt-get update
-        sudo apt-get install build-essential
-        sudo apt-get build-dep emacs24
+	sudo apt-get -y install libxpm-dev libjpeg-dev libgif-dev libtiff4-dev
+        sudo apt-get -y install build-essential
+        sudo apt-get -y build-dep emacs24
 
         cd emacs-24.4
         ./configure
