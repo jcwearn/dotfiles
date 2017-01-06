@@ -1,13 +1,13 @@
 #!/bin/bash
 
-platform=$(uname)
-emacs_path=$(which emacs)
-
 check_emacs_installed() {
-    if [ "$emacs_path" != "" ]; then
-	emacs_installed=true
-    else
+    program="emacs"
+    condition=$(which $program 2>/dev/null | grep -v "not found" | wc -l)
+    if [ $condition -eq 0 ] ; then
+	echo "$program is not installed"
 	emacs_installed=false
+    else
+	emacs_installed=true
     fi
 }
 
@@ -17,6 +17,7 @@ find_emacs_version() {
 }
 
 install_emacs() {
+    platform=$(uname)
     if [[ $platform == "Darwin" ]]; then
         brew install emacs --with-cocoa --with-gnutls
     elif [[ $platform == "Linux"  ]]; then
