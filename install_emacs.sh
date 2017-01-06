@@ -21,17 +21,19 @@ install_emacs() {
         brew install emacs --with-cocoa --with-gnutls
     elif [[ $platform == "Linux"  ]]; then
 	#taken from http://askubuntu.com/a/546050
-	sudo apt-get update
 	mkdir emacs-src && cd emacs-src
 	wget http://mirror.team-cymru.org/gnu/emacs/emacs-24.4.tar.gz
         tar xvf emacs-24.4.tar.gz
 
+	sudo apt-get update
         sudo apt-get install build-essential
         sudo apt-get build-dep emacs24
+
         cd emacs-24.4
         ./configure
         make
         sudo make install
+
 	cd ../../
         rm -rf emacs-src
     fi
