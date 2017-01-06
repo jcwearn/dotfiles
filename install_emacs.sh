@@ -21,6 +21,7 @@ install_emacs() {
         brew install emacs --with-cocoa --with-gnutls
     elif [[ $platform == "Linux"  ]]; then
 	#taken from http://askubuntu.com/a/546050
+	sudo apt-get update
 	mkdir emacs-src && cd emacs-src
 	wget http://mirror.team-cymru.org/gnu/emacs/emacs-24.4.tar.gz
         tar xvf emacs-24.4.tar.gz
@@ -48,7 +49,7 @@ backup_existing_emacs_config() {
 install_emacs_config() {
     echo "Installing dotfiles"
     cp .emacs ~/.emacs
-    cp -r .emacs.d/ ~/emacs.d/
+    cp -r .emacs.d/ ~/.emacs.d/
 }
 
 check_emacs_installed
