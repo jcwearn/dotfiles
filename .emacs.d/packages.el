@@ -11,9 +11,11 @@
 (defvar required-packages
   '(
     clojure-mode
-    elixir-mode
+    groovy-mode
+    haml-mode
     hlinum
     ido-ubiquitous
+    jade-mode
     js2-mode
     json-mode
     multi-term
@@ -21,6 +23,7 @@
     neotree
     recentf
     smex
+    yaml-mode
     ) "a list of packages to ensure are installed at launch")
 
 ;; method to check if all packages are installed

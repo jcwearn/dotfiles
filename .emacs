@@ -4,11 +4,6 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;; https://github.com/jaypei/emacs-neotree
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages")
-                         ("melpa" . "http://melpa.org/packages/")))
-
 (load "~/.emacs.d/packages.el")
 
 (require 'neotree)
@@ -37,7 +32,22 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("www" . js2-mode))
 
+;; enable groovy-mode on Jenkinsfile
+(add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
+
 (setq js2-highlight-level 3)
+
+(require 'multi-web-mode)
+(setq mweb-default-major-mode 'html-mode)
+(setq mweb-tags
+      '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+        (js2-mode  "<script[^>]*>" "</script>")
+        (css-mode "<style[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(multi-web-global-mode 1)
+
+(add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; enable clojure-mode on all files of type .clj
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
@@ -61,6 +71,10 @@
 (add-to-list 'load-path "~/.emacs.d/src/hlinum-mode")
 (require 'hlinum)
 (hlinum-activate)
+
+;; set ctl ha as backspace and back kill ring
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(global-set-key (kbd "C-h") 'delete-backward-char)
 
 ;; enable meta key + movement keys to move windows
 (global-set-key (kbd "C-c b") 'windmove-left)
@@ -90,15 +104,6 @@ your recently and most frequently used commands.")
 ;; bind uncomment-region to C-c /
 (global-set-key (kbd "C-c /") 'uncomment-region)
 
-(require 'multi-web-mode)
-(setq mweb-default-major-mode 'html-mode)
-(setq mweb-tags
-      '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-        (js2-mode  "<script[^>]*>" "</script>")
-        (css-mode "<style[^>]*>" "</style>")))
-(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
-(multi-web-global-mode 1)
-
 ;; removes trailing white space when saving a file
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -113,3 +118,17 @@ your recently and most frequently used commands.")
 
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (groovy-mode smex neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
