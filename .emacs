@@ -34,6 +34,7 @@
 
 ;; enable groovy-mode on Jenkinsfile
 (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
+(setq groovy-indent-offset 2)
 
 (setq js2-highlight-level 3)
 
