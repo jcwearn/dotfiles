@@ -11,6 +11,7 @@
 (defvar required-packages
   '(
     clojure-mode
+    go-mode
     groovy-mode
     haml-mode
     hlinum
