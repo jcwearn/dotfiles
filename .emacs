@@ -19,6 +19,8 @@
 ;; enable column-number-mode
 (column-number-mode 1)
 
+(setq-default tab-width 2)
+
 ;; https://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
 ;; set indent width for js files
 (setq js-indent-level 2)
