@@ -35,6 +35,11 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("www" . js2-mode))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'indent-tabs-mode)
+            (setq indent-tabs-mode nil)))
+
 ;; enable groovy-mode on Jenkinsfile
 (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
 (setq groovy-indent-offset 2)
