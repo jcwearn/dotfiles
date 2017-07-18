@@ -11,6 +11,7 @@
 (defvar required-packages
   '(
     clojure-mode
+    dtrt-indent
     go-mode
     groovy-mode
     haml-mode
