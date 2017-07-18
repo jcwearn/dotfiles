@@ -9,6 +9,12 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
+
+;; require find file at point.  require prefix of C-u
+(require 'ffap)
+(ffap-bindings)
+(setq ffap-require-prefix t)
+
 ;; adds line numbers and extra space in between text and line numbers
 (global-linum-mode 1)
 (setq linum-format "%d ")
