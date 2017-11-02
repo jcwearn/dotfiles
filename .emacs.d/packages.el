@@ -10,6 +10,7 @@
 
 (defvar required-packages
   '(
+    base16-theme
     clojure-mode
     dtrt-indent
     go-mode
@@ -24,6 +25,7 @@
     multi-web-mode
     neotree
     recentf
+    rjsx-mode
     smex
     yaml-mode
     ) "a list of packages to ensure are installed at launch")
