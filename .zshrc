@@ -34,6 +34,7 @@ alias emasc="/usr/local/bin/emacs -nw"
 alias eamcs="/usr/local/bin/emacs -nw"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias ducks='du -cks * | sort -rn | head'
+alias decodify="node -e \"try {console.log(JSON.parse(decodeURIComponent(new Buffer(process.argv[1], 'base64'))))} catch (e) { console.log('Failed to parse input')}\""
 
 set -g default-terminal "screen-256color"
 export TERM=xterm-256color
