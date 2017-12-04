@@ -17,7 +17,7 @@
     groovy-mode
     haml-mode
     hlinum
-    ido-ubiquitous
+    ido-completing-read+
     jade-mode
     js2-mode
     json-mode

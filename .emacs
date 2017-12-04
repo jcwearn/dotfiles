@@ -137,7 +137,7 @@ your recently and most frequently used commands.")
 (ido-mode 1)
 (ido-everywhere 1)
 
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
