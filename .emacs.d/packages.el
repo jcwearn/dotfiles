@@ -27,6 +27,7 @@
     recentf
     rjsx-mode
     smex
+    web-mode
     yaml-mode
     ) "a list of packages to ensure are installed at launch")
 

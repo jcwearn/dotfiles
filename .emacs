@@ -57,6 +57,9 @@
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 (setq groovy-indent-offset 2)
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
 (setq js2-highlight-level 3)
 
 (require 'multi-web-mode)
