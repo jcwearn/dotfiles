@@ -37,6 +37,8 @@ alias ls="ls -lartG"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias ducks='du -cks * | sort -rn | head'
 alias decodify="node -e \"try {console.log(JSON.parse(decodeURIComponent(new Buffer(process.argv[1], 'base64'))))} catch (e) { console.log('Failed to parse input')}\""
+alias showfiles="defaults write com.apple.finder AppleShowAllFiles TRUE"
+alias hidefiles="defaults write com.apple.finder AppleShowAllFiles FALSE"
 
 set -g default-terminal "screen-256color"
 export TERM=xterm-256color
