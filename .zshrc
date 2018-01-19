@@ -33,12 +33,13 @@ alias enacs="/usr/local/bin/emacs -nw"
 alias emasc="/usr/local/bin/emacs -nw"
 alias eamcs="/usr/local/bin/emacs -nw"
 alias emac="/usr/local/bin/emacs -nw"
-alias ls="ls -lartG"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias ls="ls -lartGh"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias ducks='du -cks * | sort -rn | head'
 alias decodify="node -e \"try {console.log(JSON.parse(decodeURIComponent(new Buffer(process.argv[1], 'base64'))))} catch (e) { console.log('Failed to parse input')}\""
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles TRUE"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles FALSE"
+alias gradlew="/Users/jacksonwearn/Documents/cnn/metabuild/gradlew"
 
 set -g default-terminal "screen-256color"
 export TERM=xterm-256color
@@ -59,3 +60,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
