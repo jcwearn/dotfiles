@@ -57,6 +57,9 @@
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 (setq groovy-indent-offset 2)
 
+;; enable dockerfile-mode on Dockerfile
+(add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
+
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 

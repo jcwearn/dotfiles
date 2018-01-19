@@ -12,6 +12,7 @@
   '(
     base16-theme
     clojure-mode
+    dockerfile-mode
     dtrt-indent
     go-mode
     groovy-mode
