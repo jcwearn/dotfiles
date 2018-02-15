@@ -1,0 +1,8 @@
+[alias]
+    co = checkout
+    st = status
+    #https://stackoverflow.com/a/29072745/2606879
+    all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
+[user]
+    name = Wearn, Jackson
+    email = jackson.wearn@turner.com
