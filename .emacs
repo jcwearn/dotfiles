@@ -30,13 +30,14 @@
 (setq sh-use-smie nil)
 (setq sh-basic-offset 2)
 (setq sh-indentation 2)
+(setq require-final-newline nil)
 
 (require 'dtrt-indent)
 (dtrt-indent-mode t)
 
 ;; https://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
 ;; set indent width for js files
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 
 ;; load wombat as color theme
 (load-theme 'wombat t)
@@ -51,6 +52,8 @@
           (lambda ()
             (make-local-variable 'indent-tabs-mode)
             (setq indent-tabs-mode nil)))
+
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . handlebars-mode))
 
 ;; enable groovy-mode on Jenkinsfile
 (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
@@ -93,7 +96,7 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;;
-(setq js2-basic-offset 2)
+(setq js2-basic-offset 4)
 
 ;; highlight current linenumber
 (add-to-list 'load-path "~/.emacs.d/src/hlinum-mode")

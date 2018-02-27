@@ -17,6 +17,7 @@
     go-mode
     groovy-mode
     haml-mode
+    handlebars-mode
     hlinum
     ido-completing-read+
     jade-mode
