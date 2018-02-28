@@ -54,6 +54,7 @@
             (setq indent-tabs-mode nil)))
 
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . handlebars-mode))
+(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 
 ;; enable groovy-mode on Jenkinsfile
 (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))

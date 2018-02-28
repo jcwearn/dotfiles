@@ -23,6 +23,7 @@
     jade-mode
     js2-mode
     json-mode
+    less-css-mode
     multi-term
     multi-web-mode
     neotree
