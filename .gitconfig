@@ -3,7 +3,7 @@
     st = status
     #https://stackoverflow.com/a/29072745/2606879
     all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
-    undo = reset --hard HEAD~1
+    undo = "!f(){ EXIT_CODE=0 && git stash | grep -q \"No local changes to save\" || EXIT_CODE=1 && git reset --hard HEAD~1 && if(( $EXIT_CODE == 1 )); then git stash pop; fi; };f"
 [user]
     name = Wearn, Jackson
     email = jackson.wearn@turner.com
