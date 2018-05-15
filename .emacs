@@ -3,6 +3,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+(xterm-mouse-mode 1)
 
 (load "~/.emacs.d/packages.el")
 
