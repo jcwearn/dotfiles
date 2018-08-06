@@ -14,6 +14,7 @@
     clojure-mode
     dockerfile-mode
     dtrt-indent
+    dumb-jump
     go-mode
     groovy-mode
     haml-mode

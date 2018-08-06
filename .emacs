@@ -4,6 +4,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 (xterm-mouse-mode 1)
+(dumb-jump-mode)
 
 (load "~/.emacs.d/packages.el")
 
@@ -27,10 +28,10 @@
 (column-number-mode 1)
 
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (setq sh-use-smie nil)
-(setq sh-basic-offset 2)
-(setq sh-indentation 2)
+(setq sh-basic-offset 4)
+(setq sh-indentation 4)
 (setq require-final-newline nil)
 
 (require 'dtrt-indent)
@@ -39,6 +40,7 @@
 ;; https://stackoverflow.com/questions/4177929/how-to-change-the-indentation-width-in-emacs-javascript-mode
 ;; set indent width for js files
 (setq js-indent-level 4)
+(setq js-switch-indent-offset 4)
 
 ;; load wombat as color theme
 (load-theme 'wombat t)
@@ -60,7 +62,7 @@
 ;; enable groovy-mode on Jenkinsfile
 (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
-(setq groovy-indent-offset 2)
+(setq groovy-indent-offset 4)
 
 ;; enable dockerfile-mode on Dockerfile
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
@@ -114,6 +116,9 @@
 (global-set-key (kbd "C-c f") 'windmove-right)
 (global-set-key (kbd "C-c p") 'windmove-up)
 (global-set-key (kbd "C-c n") 'windmove-down)
+
+(global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-line)
 
 ;; Enable 5 line movement with Meta keys
 (global-set-key (kbd "M-n")
@@ -169,5 +174,5 @@ your recently and most frequently used commands.")
 (add-hook 'go-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq tab-width 2)
+            (setq tab-width 4)
             (setq indent-tabs-mode nil)))
