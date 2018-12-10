@@ -12,6 +12,7 @@
   '(
     base16-theme
     clojure-mode
+    company-tern
     dockerfile-mode
     dtrt-indent
     dumb-jump
