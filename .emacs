@@ -56,6 +56,8 @@
             (make-local-variable 'indent-tabs-mode)
             (setq indent-tabs-mode nil)))
 
+
+;; https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
 (require 'company)
 (require 'company-tern)
 
