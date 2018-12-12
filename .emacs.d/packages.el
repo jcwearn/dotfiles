@@ -30,9 +30,9 @@
     multi-web-mode
     neotree
     recentf
-    rjsx-mode
     smex
     web-mode
+    xref-js2
     yaml-mode
     ) "a list of packages to ensure are installed at launch")
 
