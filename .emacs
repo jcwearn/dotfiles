@@ -16,6 +16,7 @@
 (require 'ffap)
 (ffap-bindings)
 (setq ffap-require-prefix t)
+(global-set-key (kbd "<S-mouse-1>") `ffap-at-mouse)
 
 ;; adds line numbers and extra space in between text and line numbers
 (global-linum-mode 1)
