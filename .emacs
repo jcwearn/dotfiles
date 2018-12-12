@@ -7,10 +7,10 @@
 (dumb-jump-mode)
 
 (load "~/.emacs.d/packages.el")
+(load "~/.emacs.d/tabbar-tweak.el")
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
-
 
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)

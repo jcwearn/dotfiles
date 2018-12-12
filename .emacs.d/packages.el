@@ -31,6 +31,7 @@
     neotree
     recentf
     smex
+    tabbar
     web-mode
     xref-js2
     yaml-mode
