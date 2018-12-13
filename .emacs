@@ -16,7 +16,6 @@
 (require 'ffap)
 (ffap-bindings)
 (setq ffap-require-prefix t)
-(global-set-key (kbd "<S-mouse-1>") `ffap-at-mouse)
 
 ;; adds line numbers and extra space in between text and line numbers
 (global-linum-mode 1)
@@ -63,9 +62,10 @@
 (require 'company-tern)
 
 (add-to-list 'company-backends 'company-tern)
-(add-hook 'js2-mode-hook (lambda ()
-                           (tern-mode)
-                           (company-mode)))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (tern-mode)
+            (company-mode)))
 
 ;; Disable completion keybindings, as we use xref-js2 instead
 (define-key tern-mode-keymap (kbd "M-.") nil)
@@ -83,8 +83,16 @@
 ;; unbind it.
 (define-key js-mode-map (kbd "M-.") nil)
 
-(add-hook 'js2-mode-hook (lambda ()
-  (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+
+;; https://emacs.stackexchange.com/questions/46568/update-point-using-mouse/46569#46569
+(global-set-key (kbd "<S-mouse-1>")
+                (lambda (event)
+                  (interactive (list last-command-event))
+                  (posn-set-point (event-end event))
+                  (xref-find-definitions (thing-at-point 'word))))
 
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . handlebars-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
@@ -158,6 +166,19 @@
 
 ;; add indent-region binding to C-c i
 (global-set-key (kbd "C-c i") 'indent-region)
+
+;; kill scatch and other ** buffers
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer
+        (delq (current-buffer)
+              (remove-if-not
+               (lambda(buffer)
+                 (find (aref (buffer-name buffer) 0) " *"))
+               (buffer-list)))))
+
+(global-set-key (kbd "C-c k") 'kill-other-buffers)
 
 ;;; Smex
 (autoload 'smex "smex"
