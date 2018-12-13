@@ -48,6 +48,8 @@
 ;; enable js2-mode on all files of type js
 ;; http://ergoemacs.org/emacs/emacs_auto-activate_a_major-mode.html
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '(".*/components/.*.js" . rjsx-mode))
+(add-to-list 'auto-mode-alist '(".*/containers/.*.js" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("www" . js2-mode))
 

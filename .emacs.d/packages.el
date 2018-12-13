@@ -30,6 +30,7 @@
     multi-web-mode
     neotree
     recentf
+    rjsx-mode
     smex
     tabbar
     web-mode
