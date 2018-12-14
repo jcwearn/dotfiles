@@ -28,6 +28,7 @@
     less-css-mode
     multi-term
     multi-web-mode
+    multiple-cursors
     neotree
     recentf
     rjsx-mode
