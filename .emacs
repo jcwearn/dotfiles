@@ -50,6 +50,8 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '(".*/components/.*.js" . rjsx-mode))
 (add-to-list 'auto-mode-alist '(".*/containers/.*.js" . rjsx-mode))
+;; https://stackoverflow.com/questions/1274986/how-to-get-emacs-magic-mode-alist-to-match-against-string-in-middle-of-file
+(add-to-list 'magic-mode-alist '("\\(.\\|\n\\)*require('react')" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("www" . js2-mode))
 
@@ -57,7 +59,6 @@
           (lambda ()
             (make-local-variable 'indent-tabs-mode)
             (setq indent-tabs-mode nil)))
-
 
 ;; https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
 (require 'company)
