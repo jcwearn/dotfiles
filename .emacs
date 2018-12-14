@@ -14,9 +14,10 @@
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-x <mouse-1>") 'mc/add-cursor-on-click)
 
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
