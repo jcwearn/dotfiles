@@ -19,6 +19,10 @@
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-x <mouse-1>") 'mc/add-cursor-on-click)
 
+(require 'helm-config)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x r b") 'helm-bookmarks)
+
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
 (ffap-bindings)
@@ -225,6 +229,7 @@ your recently and most frequently used commands.")
  '(package-selected-packages
    (quote
     (groovy-mode smex neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
+ '(tabbar-separator (quote (0.5)))
  '(xref-js2-ignored-dirs (quote ("bower_components" "node_modules" "build"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

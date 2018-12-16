@@ -20,6 +20,7 @@
     groovy-mode
     haml-mode
     handlebars-mode
+    helm
     hlinum
     ido-completing-read+
     jade-mode
