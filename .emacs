@@ -33,6 +33,12 @@
 (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
 (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
 
+;; C-s in a buffer: open helm-swoop with empty search field
+(global-set-key (kbd "C-s") 'helm-swoop)
+(with-eval-after-load 'helm-swoop
+    (setq helm-swoop-pre-input-function
+        (lambda () nil)))
+
 (require 'helm-config)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x r b") 'helm-bookmarks)
