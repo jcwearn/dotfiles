@@ -27,6 +27,9 @@
 (ffap-bindings)
 (setq ffap-require-prefix t)
 
+(require 'helm-swoop)
+(global-set-key (kbd "M-i") 'helm-swoop)
+
 (require 'helm-config)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x r b") 'helm-bookmarks)
