@@ -29,6 +29,9 @@
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+(define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
+(define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
 
 (require 'helm-config)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
