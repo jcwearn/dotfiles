@@ -211,19 +211,6 @@
 ;; add indent-region binding to C-c i
 (global-set-key (kbd "C-c i") 'indent-region)
 
-;; kill scatch and other ** buffers
-(defun kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc 'kill-buffer
-        (delq (current-buffer)
-              (remove-if-not
-               (lambda(buffer)
-                 (find (aref (buffer-name buffer) 0) " *"))
-               (buffer-list)))))
-
-(global-set-key (kbd "C-c k") 'kill-other-buffers)
-
 ;; bind comment-region to C-x /
 (global-set-key (kbd "C-x /") 'comment-region)
 
