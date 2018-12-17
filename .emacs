@@ -10,7 +10,7 @@
 (load "~/.emacs.d/tabbar-tweak.el")
 
 (require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -177,10 +177,9 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
 ;;
 (setq js2-basic-offset 4)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; highlight current linenumber
 (require 'hlinum)
