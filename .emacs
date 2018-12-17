@@ -12,6 +12,9 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)

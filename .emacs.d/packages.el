@@ -27,6 +27,7 @@
     js2-mode
     json-mode
     less-css-mode
+    magit
     multi-term
     multi-web-mode
     multiple-cursors
