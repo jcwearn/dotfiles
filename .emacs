@@ -32,6 +32,10 @@
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
 (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
 (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
+(define-key helm-swoop-map (kbd "M-n")
+  (lambda () (interactive) (helm-next-line 5)))
+(define-key helm-swoop-map (kbd "M-p")
+  (lambda () (interactive) (helm-previous-line 5)))
 
 ;; C-s in a buffer: open helm-swoop with empty search field
 (global-set-key (kbd "C-s") 'helm-swoop)
