@@ -5,8 +5,10 @@
       '(
         electric-pair-delete-pair
         kill-region
+        rjsx-delete-creates-full-tag
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        magit-status
         ))
