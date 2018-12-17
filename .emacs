@@ -51,7 +51,11 @@
   (define-key helm-map (kbd "C-c p") 'ignore)
   (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
   (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-  (define-key helm-map (kbd "C-z")  'helm-select-action))
+  (define-key helm-map (kbd "C-z") 'helm-select-action)
+  (define-key helm-map (kbd "M-n")
+    (lambda () (interactive) (helm-next-line 5)))
+  (define-key helm-map (kbd "M-p")
+    (lambda () (interactive) (helm-previous-line 5))))
 
 ;; adds line numbers and extra space in between text and line numbers
 (global-linum-mode 1)
