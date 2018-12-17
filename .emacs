@@ -19,14 +19,23 @@
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-x <mouse-1>") 'mc/add-cursor-on-click)
 
-(require 'helm-config)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x r b") 'helm-bookmarks)
-
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
 (ffap-bindings)
 (setq ffap-require-prefix t)
+
+(require 'helm-config)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x r b") 'helm-bookmarks)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(with-eval-after-load 'helm
+  (define-key helm-map (kbd "C-c p") 'ignore)
+  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+  (define-key helm-map (kbd "C-z")  'helm-select-action))
 
 ;; adds line numbers and extra space in between text and line numbers
 (global-linum-mode 1)
@@ -194,13 +203,6 @@
 
 (global-set-key (kbd "C-c k") 'kill-other-buffers)
 
-;;; Smex
-(autoload 'smex "smex"
-  "Smex is a M-x enhancement for Emacs, it provides a convenient interface to
-your recently and most frequently used commands.")
-
-(global-set-key (kbd "M-x") 'smex)
-
 ;; bind comment-region to C-x /
 (global-set-key (kbd "C-x /") 'comment-region)
 
@@ -228,7 +230,7 @@ your recently and most frequently used commands.")
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (groovy-mode smex neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
+    (groovy-mode neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
  '(tabbar-separator (quote (0.5)))
  '(xref-js2-ignored-dirs (quote ("bower_components" "node_modules" "build"))))
 (custom-set-faces

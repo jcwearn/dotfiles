@@ -33,7 +33,6 @@
     neotree
     recentf
     rjsx-mode
-    smex
     tabbar
     web-mode
     xref-js2
