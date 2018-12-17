@@ -62,7 +62,10 @@ That is, a string used to represent it on the tab bar."
         (lambda ()
           (remove-if
            (lambda(buffer)
-             (find (aref (buffer-name buffer) 0) " *"))
+             (or
+              (string-match "magit" (buffer-name buffer))
+              (find (aref (buffer-name buffer) 0) " *"))
+             )
            (buffer-list))))
   (tabbar-mode))
 
