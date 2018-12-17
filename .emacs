@@ -136,6 +136,8 @@
                   (posn-set-point (event-end event))
                   (xref-find-definitions (thing-at-point 'word))))
 
+(setq js2-basic-offset 4)
+
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . handlebars-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 
@@ -177,8 +179,6 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
-;;
-(setq js2-basic-offset 4)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; highlight current linenumber
