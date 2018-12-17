@@ -84,8 +84,6 @@
 ;; enable js2-mode on all files of type js
 ;; http://ergoemacs.org/emacs/emacs_auto-activate_a_major-mode.html
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-;; https://stackoverflow.com/questions/1274986/how-to-get-emacs-magic-mode-alist-to-match-against-string-in-middle-of-file
-;; (add-to-list 'magic-mode-alist '("\\(.\\|\n\\)*require('react')" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("www" . rjsx-mode))
 
@@ -181,7 +179,6 @@
 (setq js2-basic-offset 4)
 
 ;; highlight current linenumber
-(add-to-list 'load-path "~/.emacs.d/src/hlinum-mode")
 (require 'hlinum)
 (hlinum-activate)
 
