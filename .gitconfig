@@ -8,4 +8,4 @@
     name = Wearn, Jackson
     email = jackson.wearn@turner.com
 [core]
-	excludesfile = /Users/jacksonwearn/.gitignore_global
+	excludesfile = ~/.gitignore_global
