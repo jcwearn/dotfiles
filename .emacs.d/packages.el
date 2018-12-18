@@ -22,6 +22,7 @@
     helm
     hlinum
     ido-completing-read+
+    indium
     jade-mode
     js2-mode
     json-mode

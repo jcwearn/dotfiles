@@ -9,6 +9,13 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/tabbar-tweak.el")
 
+(require 'indium)
+;; need to remap C-c b keys https://github.com/NicolasPetton/Indium/blob/128b160d6568ceecba493bf6ca7f928c2024355f/indium-interaction.el#L356-L364
+(define-key indium-interaction-mode-map (kbd "C-c b") 'windmove-left)
+(define-key indium-interaction-mode-map (kbd "C-c f") 'windmove-right)
+(define-key indium-interaction-mode-map (kbd "C-c p") 'windmove-up)
+(define-key indium-interaction-mode-map (kbd "C-c n") 'windmove-down)
+
 (require 'neotree)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
