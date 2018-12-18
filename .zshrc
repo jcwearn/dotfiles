@@ -26,13 +26,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear"
-alias emacs="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias emcas="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias ecmas="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias enacs="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias emasc="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias eamcs="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
-alias emac="/usr/local/bin/emacsclient -nw --alternate-editor=\"\""
 alias ls="ls -lartGh"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias ducks='du -cks * | sort -rn | head'
@@ -62,3 +55,34 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+UUID=$(uuidgen)
+
+export EMACSCLIENT="/usr/local/bin/emacsclient -nw --socket-name=$UUID"
+export ALTERNATE_EDITOR="/usr/local/bin/emacs --daemon=$UUID"
+alias emacs=$EMACSCLIENT
+alias emcas=$EMACSCLIENT
+alias ecmas=$EMACSCLIENT
+alias enacs=$EMACSCLIENT
+alias emasc=$EMACSCLIENT
+alias eamcs=$EMACSCLIENT
+alias emac=$EMACSCLIENT
+export EDITOR=$EMACSCLIENT
+export VISUAL=$EDITOR
+
+# function getPWD() { pwd }
+# EMACS_CLIENT=/usr/local/bin/emacsclient
+# EMACS_SERVER=/usr/local/bin/emacs
+# EMACS_CLIENT=/usr/local/bin/emacsclient
+# EMACS_SERVER=/usr/local/bin/emacs
+# ALTERNATE_EDITOR="$EMACS_SERVER --daemon=$(getPWD)"
+# EMACS="$EMACS_CLIENT -nw --alternate-editor=\"$ALTERNATE_EDITOR\" --socket-name=$(getPWD)"
+# alias emacs=$EMACS
+# alias emcas=$EMACS
+# alias ecmas=$EMACS
+# alias enacs=$EMACS
+# alias emasc=$EMACS
+# alias eamcs=$EMACS
+# alias emac=$EMACS
+# export EDITOR=$EMACS
+# export VISUAL=$EDITOR
