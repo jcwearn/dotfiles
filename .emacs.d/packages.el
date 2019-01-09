@@ -9,6 +9,7 @@
 (defvar required-packages
   '(
     base16-theme
+    buffer-move
     clojure-mode
     company-tern
     dockerfile-mode
