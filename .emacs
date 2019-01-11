@@ -206,10 +206,6 @@
 (require 'hlinum)
 (hlinum-activate)
 
-;; set ctl ha as backspace and back kill ring
-(global-set-key (kbd "M-h") 'backward-kill-word)
-(global-set-key (kbd "C-h") 'delete-backward-char)
-
 ;; enable meta key + movement keys to move windows
 (global-set-key (kbd "C-c b") 'windmove-left)
 (global-set-key (kbd "C-c f") 'windmove-right)
