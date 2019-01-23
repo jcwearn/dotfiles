@@ -221,6 +221,19 @@
 (global-set-key (kbd "M-p")
                 (lambda () (interactive) (previous-line 5)))
 
+;; https://emacsredux.com/blog/2013/04/28/switch-to-previous-buffer/
+(defun er-switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+;; https://emacsredux.com/blog/2013/04/28/execute-commands-ninja-style-with-key-chord-mode/
+;; key chords
+(require 'key-chord)
+(key-chord-define-global "JJ" #'er-switch-to-previous-buffer)
+(key-chord-mode +1)
+
 ;; add indent-region binding to C-c i
 (global-set-key (kbd "C-c i") 'indent-region)
 
