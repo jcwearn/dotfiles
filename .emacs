@@ -9,9 +9,16 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/tabbar-tweak.el")
 
-(require 'key-chord)
+(setq interprogram-cut-function
+      (lambda (text &optional push)
+    (let* ((process-connection-type nil)
+           (pbproxy (start-process "pbcopy" "pbcopy" "/usr/bin/pbcopy")))
+      (process-send-string pbproxy text)
+      (process-send-eof pbproxy))))
+
 ;; https://emacsredux.com/blog/2013/04/28/execute-commands-ninja-style-with-key-chord-mode/
 ;; key chords
+(require 'key-chord)
 (key-chord-mode +1)
 
 (require 'indium)
