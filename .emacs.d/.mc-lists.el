@@ -7,10 +7,12 @@
         js2r-kill
         kill-region
         rjsx-delete-creates-full-tag
+        sh-case
         xterm-paste
         ))
 
 (setq mc/cmds-to-run-once
       '(
         magit-status
+        suspend-frame
         ))
