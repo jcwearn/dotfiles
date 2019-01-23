@@ -9,6 +9,11 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/tabbar-tweak.el")
 
+(require 'key-chord)
+;; https://emacsredux.com/blog/2013/04/28/execute-commands-ninja-style-with-key-chord-mode/
+;; key chords
+(key-chord-mode +1)
+
 (require 'indium)
 ;; need to remap C-c b keys https://github.com/NicolasPetton/Indium/blob/128b160d6568ceecba493bf6ca7f928c2024355f/indium-interaction.el#L356-L364
 (define-key indium-interaction-mode-map (kbd "C-c b") 'windmove-left)
@@ -60,9 +65,12 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (global-set-key (kbd "C-x r b") 'helm-bookmarks)
+(key-chord-define-global "BM" 'helm-bookmarks)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(key-chord-define-global "FF" 'helm-find-files)
+(key-chord-define-global "AG" 'helm-do-ag)
 
 (with-eval-after-load 'helm
   (define-key helm-map (kbd "C-c p") 'ignore)
@@ -230,9 +238,7 @@ Repeated invocations toggle between the two most recently open buffers."
 
 ;; https://emacsredux.com/blog/2013/04/28/execute-commands-ninja-style-with-key-chord-mode/
 ;; key chords
-(require 'key-chord)
 (key-chord-define-global "JJ" #'er-switch-to-previous-buffer)
-(key-chord-mode +1)
 
 ;; add indent-region binding to C-c i
 (global-set-key (kbd "C-c i") 'indent-region)

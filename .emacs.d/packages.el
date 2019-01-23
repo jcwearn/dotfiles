@@ -8,6 +8,7 @@
 
 (defvar required-packages
   '(
+    ag
     base16-theme
     buffer-move
     clojure-mode
@@ -19,6 +20,7 @@
     groovy-mode
     haml-mode
     handlebars-mode
+    helm-ag
     helm-swoop
     helm
     hlinum
