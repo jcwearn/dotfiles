@@ -63,6 +63,7 @@ That is, a string used to represent it on the tab bar."
           (remove-if
            (lambda(buffer)
              (or
+              (string-match "pbcopy" (buffer-name buffer))
               (string-match "magit" (buffer-name buffer))
               (find (aref (buffer-name buffer) 0) " *"))
              )
