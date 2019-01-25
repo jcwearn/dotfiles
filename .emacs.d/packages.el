@@ -9,6 +9,7 @@
 (defvar required-packages
   '(
     ag
+    avy
     base16-theme
     buffer-move
     clojure-mode
