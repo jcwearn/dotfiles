@@ -25,6 +25,7 @@
     helm
     hlinum
     ido-completing-read+
+    indent-guide
     indium
     jade-mode
     js2-mode
