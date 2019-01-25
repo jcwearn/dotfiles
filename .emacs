@@ -172,6 +172,10 @@
                   (posn-set-point (event-end event))
                   (xref-find-definitions (thing-at-point 'word))))
 
+(key-chord-define-global "FR" 'xref-find-references)
+(key-chord-define-global "FD" 'xref-find-definitions)
+(key-chord-define-global "FB" 'xref-pop-marker-stack)
+
 (setq js2-basic-offset 4)
 
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . handlebars-mode))
