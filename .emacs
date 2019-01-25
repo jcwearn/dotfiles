@@ -38,6 +38,12 @@
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+(require 'git-messenger)
+(key-chord-define-global "GH" 'git-messenger:popup-message)
+;; Use magit-show-commit for showing status/diff commands
+(custom-set-variables
+ '(git-messenger:use-magit-popup t))
+
 (require 'indent-guide)
 (indent-guide-global-mode)
 

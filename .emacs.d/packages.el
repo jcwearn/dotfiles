@@ -17,6 +17,7 @@
     dtrt-indent
     dumb-jump
     expand-region
+    git-messenger
     go-mode
     groovy-mode
     haml-mode
