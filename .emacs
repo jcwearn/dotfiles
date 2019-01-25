@@ -64,7 +64,14 @@
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
 (ffap-bindings)
-(key-chord-define-global "FP" 'find-file-at-point)
+(key-chord-define-global "FP" 'projectile-find-file-dwim)
+
+(require 'projectile)
+(projectile-mode +1)
+
+;; (setq helm-projectile-fuzzy-match nil)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)

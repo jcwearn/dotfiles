@@ -23,6 +23,7 @@
     haml-mode
     handlebars-mode
     helm-ag
+    helm-projectile
     helm-swoop
     helm
     hlinum
@@ -39,6 +40,7 @@
     multi-web-mode
     multiple-cursors
     neotree
+    projectile
     recentf
     rjsx-mode
     tabbar
