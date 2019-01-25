@@ -45,9 +45,6 @@
 (require 'git-messenger)
 (setq git-messenger:show-detail t)
 (key-chord-define-global "GH" 'git-messenger:popup-message)
-;; Use magit-show-commit for showing status/diff commands
-(custom-set-variables
- '(git-messenger:use-magit-popup t))
 
 (require 'indent-guide)
 (indent-guide-global-mode)
@@ -305,6 +302,7 @@ Repeated invocations toggle between the two most recently open buffers."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(git-messenger:use-magit-popup t) ;; Use magit-show-commit for showing status/diff commands
  '(package-selected-packages
    (quote
     (groovy-mode neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
