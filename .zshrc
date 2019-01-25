@@ -56,13 +56,16 @@ export NVM_DIR="$HOME/.nvm"
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-EMACS="/usr/local/bin/emacs -nw"
-alias emacs=$EMACS
-alias emcas=$EMACS
-alias ecmas=$EMACS
-alias enacs=$EMACS
-alias emasc=$EMACS
-alias eamcs=$EMACS
-alias emac=$EMACS
-export EDITOR=$EMACS
+export ALTERNATE_EDITOR="/usr/local/bin/emacs --daemon=$UUID"
+EMACSCLIENT="/usr/local/bin/emacsclient -nw --socket-name=$UUID"
+
+alias emacs=$EMACSCLIENT
+alias emcas=$EMACSCLIENT
+alias ecmas=$EMACSCLIENT
+alias enacs=$EMACSCLIENT
+alias emasc=$EMACSCLIENT
+alias eamcs=$EMACSCLIENT
+alias emac=$EMACSCLIENT
+
+export EDITOR=$EMACSCLIENT
 export VISUAL=$EDITOR
