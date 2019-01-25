@@ -64,7 +64,7 @@
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
 (ffap-bindings)
-(setq ffap-require-prefix t)
+(key-chord-define-global "FP" 'find-file-at-point)
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
