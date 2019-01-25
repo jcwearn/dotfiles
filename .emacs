@@ -21,6 +21,10 @@
 (require 'key-chord)
 (key-chord-mode +1)
 
+(require 'expand-region)
+(key-chord-define-global "EE" 'er/expand-region)
+(key-chord-define-global "CC" 'er/contract-region)
+
 (require 'indium)
 ;; need to remap C-c b keys https://github.com/NicolasPetton/Indium/blob/128b160d6568ceecba493bf6ca7f928c2024355f/indium-interaction.el#L356-L364
 (define-key indium-interaction-mode-map (kbd "C-c b") 'windmove-left)

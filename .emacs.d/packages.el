@@ -16,6 +16,7 @@
     dockerfile-mode
     dtrt-indent
     dumb-jump
+    expand-region
     go-mode
     groovy-mode
     haml-mode
