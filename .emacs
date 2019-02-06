@@ -30,6 +30,12 @@
 
 (show-paren-mode 1)
 
+(require 'elfeed)
+(key-chord-define-global "EF" 'elfeed)
+(setq elfeed-feeds
+      '(("http://www.reddit.com/.rss" reddit)
+        ("https://hnrss.org/frontpage" hackernews)))
+
 (require 'indium)
 ;; need to remap C-c b keys https://github.com/NicolasPetton/Indium/blob/128b160d6568ceecba493bf6ca7f928c2024355f/indium-interaction.el#L356-L364
 (define-key indium-interaction-mode-map (kbd "C-c b") 'windmove-left)
