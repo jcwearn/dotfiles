@@ -72,17 +72,20 @@
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-x <mouse-1>") 'mc/add-cursor-on-click)
 
-;; require find file at point.  require prefix of C-u
-(require 'ffap)
-(ffap-bindings)
-(key-chord-define-global "FP" 'projectile-find-file-dwim)
-
 (require 'projectile)
 (projectile-mode +1)
 
 ;; (setq helm-projectile-fuzzy-match nil)
 (require 'helm-projectile)
 (helm-projectile-on)
+(key-chord-define-global "HP" 'helm-projectile)
+
+;; require find file at point.  require prefix of C-u
+(require 'ffap)
+(ffap-bindings)
+(key-chord-define-global "FP" 'projectile-find-file-dwim)
+
+(key-chord-define-global "AA" 'mark-whole-buffer)
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
@@ -102,6 +105,7 @@
 
 (require 'helm-config)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(key-chord-define-global "BB" 'helm-buffers-list)
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (global-set-key (kbd "C-x r b") 'helm-bookmarks)
 (key-chord-define-global "BM" 'helm-bookmarks)
@@ -109,7 +113,7 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (key-chord-define-global "FF" 'helm-find-files)
-(key-chord-define-global "AG" 'helm-do-ag)
+(key-chord-define-global "AG" 'helm-projectile-ag)
 
 (with-eval-after-load 'helm
   (define-key helm-map (kbd "C-c p") 'ignore)
@@ -312,7 +316,7 @@ Repeated invocations toggle between the two most recently open buffers."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(git-messenger:use-magit-popup t) ;; Use magit-show-commit for showing status/diff commands
+ '(git-messenger:use-magit-popup t)
  '(package-selected-packages
    (quote
     (groovy-mode neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
