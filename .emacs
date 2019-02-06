@@ -26,8 +26,7 @@
 (key-chord-define-global "CC" 'er/contract-region)
 
 (require 'avy)
-(key-chord-define-global " s" 'avy-goto-char-timer)
-(key-chord-define-global " w" 'avy-goto-word-1)
+(key-chord-define-global "::" 'avy-goto-word-1)
 
 (require 'indium)
 ;; need to remap C-c b keys https://github.com/NicolasPetton/Indium/blob/128b160d6568ceecba493bf6ca7f928c2024355f/indium-interaction.el#L356-L364
