@@ -43,6 +43,9 @@
 (define-key indium-interaction-mode-map (kbd "C-c p") 'windmove-up)
 (define-key indium-interaction-mode-map (kbd "C-c n") 'windmove-down)
 
+(require 'nyan-mode)
+(nyan-mode t)
+
 (require 'neotree)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 

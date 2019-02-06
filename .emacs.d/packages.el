@@ -17,13 +17,13 @@
     dockerfile-mode
     dtrt-indent
     dumb-jump
+    elfeed
     expand-region
     git-messenger
     go-mode
     groovy-mode
     haml-mode
     handlebars-mode
-    helm-ag
     helm-projectile
     helm-swoop
     helm
@@ -40,6 +40,7 @@
     multi-term
     multi-web-mode
     multiple-cursors
+    nyan-mode
     neotree
     projectile
     recentf
