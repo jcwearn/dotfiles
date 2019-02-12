@@ -79,13 +79,13 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 (key-chord-define-global "HP" 'helm-projectile)
+(key-chord-define-global "FP" 'helm-projectile-find-file-dwim)
 
 ;; require find file at point.  require prefix of C-u
 (require 'ffap)
 (ffap-bindings)
-(key-chord-define-global "FP" 'projectile-find-file-dwim)
-
-(key-chord-define-global "AA" 'mark-whole-buffer)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(key-chord-define-global "FF" 'helm-find-files)
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
