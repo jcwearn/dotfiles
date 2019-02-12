@@ -50,7 +50,10 @@
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (require 'magit)
+(require 'forge)
+(add-to-list 'forge-alist '("atom-git.turner.com" "atom-git.turner.com/api/v4" "atom-git.turner.com" forge-gitlab-repository))
 (global-set-key (kbd "C-x g") 'magit-status)
+(key-chord-define-global "GG" 'magit-status)
 
 (require 'git-messenger)
 (setq git-messenger:show-detail t)

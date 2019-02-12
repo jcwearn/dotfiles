@@ -19,6 +19,7 @@
     dumb-jump
     elfeed
     expand-region
+    forge
     git-messenger
     go-mode
     groovy-mode

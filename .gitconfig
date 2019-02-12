@@ -9,3 +9,7 @@
     email = jackson.wearn@turner.com
 [core]
 	excludesfile = ~/.gitignore_global
+[gitlab "atom-git.turner.com/api/v4"]
+	user = jwearn
+[github]
+	user = jwearn
