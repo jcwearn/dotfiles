@@ -2,3 +2,6 @@
 *bundle.js
 *spec.js
 *Spec.js
+*.min.js
+vender/
+dist/
