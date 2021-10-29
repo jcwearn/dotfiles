@@ -13,7 +13,6 @@
     base16-theme
     buffer-move
     clojure-mode
-    company-tern
     dockerfile-mode
     dtrt-indent
     dumb-jump

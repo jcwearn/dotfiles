@@ -3,11 +3,12 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-(xterm-mouse-mode 1)
-(dumb-jump-mode)
 
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/tabbar-tweak.el")
+
+(xterm-mouse-mode 1)
+(dumb-jump-mode)
 
 (setq interprogram-cut-function
       (lambda (text &optional push)
@@ -166,25 +167,25 @@
             (make-local-variable 'indent-tabs-mode)
             (setq indent-tabs-mode nil)))
 
-;; https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
-(require 'company)
-(require 'company-tern)
+;; ;; https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
+;; (require 'company)
+;; (require 'company-tern)
 
-(add-hook 'after-init-hook 'global-company-mode)
+;; (add-hook 'after-init-hook 'global-company-mode)
 
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (tern-mode)
-            (company-mode)))
+;; (add-to-list 'company-backends 'company-tern)
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+;;             (tern-mode)
+;;             (company-mode)))
 
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+;; (with-eval-after-load 'company
+;;   (define-key company-active-map (kbd "C-n") #'company-select-next)
+;;   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-;; Disable completion keybindings, as we use xref-js2 instead
-(define-key tern-mode-keymap (kbd "M-.") nil)
-(define-key tern-mode-keymap (kbd "M-,") nil)
+;; ;; Disable completion keybindings, as we use xref-js2 instead
+;; (define-key tern-mode-keymap (kbd "M-.") nil)
+;; (define-key tern-mode-keymap (kbd "M-,") nil)
 
 ;; https://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
 (require 'js2-refactor)
