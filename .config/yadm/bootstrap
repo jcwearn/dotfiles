@@ -1,7 +1,8 @@
 #!/bin/bash
 # Run by `yadm bootstrap` (and offered after `yadm clone`). Safe to re-run.
-#   SKIP_BREW=1   skip Homebrew install / brew bundle
-#   SKIP_ITERM=1  skip pointing iTerm2 at ~/.config/iterm2
+#   SKIP_BREW=1          skip Homebrew install / brew bundle
+#   SKIP_ITERM=1         skip pointing iTerm2 at ~/.config/iterm2
+#   SKIP_AGENT_CONFIG=1  skip cloning/linking jcwearn/agent-config
 set -euo pipefail
 
 log() { echo "[bootstrap] $*"; }
@@ -46,6 +47,53 @@ ensure_zshrc_local() {
   fi
 }
 
+setup_agent_config() {
+  if [ "${SKIP_AGENT_CONFIG:-}" = 1 ]; then
+    log "SKIP_AGENT_CONFIG=1, skipping agent-config"
+    return 0
+  fi
+
+  local repo="${HOME}/.agent-config"
+  if [ -d "$repo/.git" ]; then
+    git -C "$repo" pull --ff-only
+  else
+    log "Cloning agent-config"
+    git clone git@github.com:jcwearn/agent-config.git "$repo"
+  fi
+
+  mkdir -p "${HOME}/.claude/skills"
+  local skill
+  for skill in "$repo"/skills/*/; do
+    [ -d "$skill" ] || continue
+    ln -sf "${skill%/}" "${HOME}/.claude/skills/$(basename "$skill")"
+  done
+
+  local claude_md="${HOME}/.claude/CLAUDE.md"
+  if [ ! -e "$claude_md" ]; then
+    {
+      echo "# Agent Rules"
+      echo
+      local rule
+      for rule in "$repo"/rules/*.md; do
+        [ -e "$rule" ] || continue
+        echo "@${rule/#$HOME/~}"
+      done
+    } >"$claude_md"
+    log "Created $claude_md importing agent-config rules"
+  fi
+
+  if command -v jq >/dev/null; then
+    local settings="${HOME}/.claude/settings.json"
+    local merged
+    merged="$(mktemp)"
+    jq -s '.[0] * .[1]' <(cat "$settings" 2>/dev/null || echo '{}') "$repo/settings.json" >"$merged"
+    mv "$merged" "$settings"
+    log "Merged agent-config settings into $settings"
+  else
+    log "jq not found, skipping settings.json merge (re-run bootstrap after installing jq)"
+  fi
+}
+
 setup_iterm() {
   if [ "${SKIP_ITERM:-}" = 1 ]; then
     log "SKIP_ITERM=1, skipping iTerm2"
@@ -74,6 +122,7 @@ setup_iterm() {
 install_brew
 install_oh_my_zsh
 ensure_zshrc_local
+setup_agent_config
 setup_iterm
 
 log "Done. Open a new shell to pick up changes."
