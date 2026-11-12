@@ -53,7 +53,12 @@ gcloud() {
 }
 
 
-export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+# Bitwarden SSH agent socket path depends on the install: Mac App Store (sandboxed) vs Homebrew-cask/direct.
+if [ -S "$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK="$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
+elif [ -S "$HOME/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+fi
 command -v kubectl >/dev/null && source <(kubectl completion zsh)
 
 export SOPS_AGE_KEY_FILE=$HOME/.age/age.key
