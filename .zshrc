@@ -22,7 +22,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-eval $(/opt/homebrew/bin/brew shellenv)
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -53,20 +53,20 @@ nvm() {
 }
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jackson/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jackson/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
 gcloud() {
   unfunction gcloud
-  [ -f '/Users/jackson/google-cloud-sdk/completion.zsh.inc' ] && . '/Users/jackson/google-cloud-sdk/completion.zsh.inc'
+  [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ] && . "$HOME/google-cloud-sdk/completion.zsh.inc"
   gcloud "$@"
 }
 
 
-export SSH_AUTH_SOCK=/Users/jackson/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
-source <(kubectl completion zsh)
+export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+command -v kubectl >/dev/null && source <(kubectl completion zsh)
 
-export SOPS_AGE_KEY_FILE=/Users/jackson/.age/age.key
+export SOPS_AGE_KEY_FILE=$HOME/.age/age.key
 export AGE_PUBLIC_KEY=age1ssrlddcqe0jrh2g3038538wuk6uzegz49gyvak2elm7rh2ccj3pq8vnz7t
 
 export PATH="$HOME/.local/bin:$PATH"
@@ -76,4 +76,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Loads a project's .envrc on cd (e.g. wedding-hq's service token from .env).
 # Keep this last: direnv wants to run after anything else that edits the prompt hooks.
-eval "$(direnv hook zsh)"
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
