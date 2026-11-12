@@ -17,9 +17,10 @@ When `yadm clone` offers to run the bootstrap, say yes. To run it later, use `ya
 - installs Homebrew if missing, then asks before running `brew bundle --global` against `~/.Brewfile`
 - clones oh-my-zsh into `~/.oh-my-zsh` if missing
 - creates an empty `~/.zshrc.local`
+- clones/pulls [`jcwearn/agent-config`](https://github.com/jcwearn/agent-config) into `~/.agent-config` and links it into `~/.claude/` (see below)
 - points iTerm2 at `~/.config/iterm2` for its settings
 
-Set `SKIP_BREW=1` or `SKIP_ITERM=1` to skip those steps.
+Set `SKIP_BREW=1`, `SKIP_AGENT_CONFIG=1`, or `SKIP_ITERM=1` to skip those steps.
 
 ## Day to day
 
@@ -50,6 +51,14 @@ gh pr create -R jcwearn/dotfiles
 - **SSH keys.** The private key lives only in Bitwarden (item "GitHub (jcwearn)"). `SSH_AUTH_SOCK` points at the Bitwarden SSH agent, which serves that key for GitHub auth and commit signing; `.gitconfig` holds the public key inline. Install Bitwarden desktop from the Mac App Store (the agent socket path in `.zshrc` is the sandboxed build's), sign in, and enable Settings > SSH agent. Test with `ssh -T git@github.com`.
 - **`~/.ssh/config`** stays out because this repo is public.
 - **Age key** at `~/.age/age.key` for sops.
+
+## agent-config
+
+[`jcwearn/agent-config`](https://github.com/jcwearn/agent-config) holds global Claude Code policy (rules, skills, `settings.json`) and is kept as its own repo, separate from this one, since it's a different concern from shell/git/editor identity. Bootstrap clones it to `~/.agent-config` and, on every rerun:
+
+- symlinks each `~/.agent-config/skills/<name>` into `~/.claude/skills/<name>`
+- creates `~/.claude/CLAUDE.md` importing every `~/.agent-config/rules/*.md` file, but only if `~/.claude/CLAUDE.md` doesn't already exist
+- merges `~/.agent-config/settings.json` into `~/.claude/settings.json` (via `jq`; machine-local keys like `theme`/`tui` are preserved, agent-config's keys win on conflict)
 
 ## iTerm2
 
