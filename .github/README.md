@@ -47,7 +47,7 @@ gh pr create -R jcwearn/dotfiles
 ## What's not in the repo
 
 - **Secrets** go in `~/.zshrc.local` (mode 600, untracked), which `.zshrc` sources. For example `export HOMEASSISTANT_API_KEY=...`.
-- **SSH keys.** Commits are SSH-signed with `~/.ssh/id_ed25519.pub`, and `SSH_AUTH_SOCK` points at the Bitwarden SSH agent. Install Bitwarden desktop with the SSH agent enabled and put the public key at that path.
+- **SSH keys.** The private key lives only in Bitwarden (item "GitHub (jcwearn)"). `SSH_AUTH_SOCK` points at the Bitwarden SSH agent, which serves that key for GitHub auth and commit signing; `.gitconfig` holds the public key inline. Install Bitwarden desktop from the Mac App Store (the agent socket path in `.zshrc` is the sandboxed build's), sign in, and enable Settings > SSH agent. Test with `ssh -T git@github.com`.
 - **`~/.ssh/config`** stays out because this repo is public.
 - **Age key** at `~/.age/age.key` for sops.
 
