@@ -114,6 +114,8 @@ brew "wget"
 brew "yamllint"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Yet Another Dotfiles Manager
+brew "yadm"
 # Utility to export your existing Cloudflare resources as Terraform resources
 brew "cloudflare/cloudflare/cf-terraforming", trusted: true
 # A fast, cross-platform build tool inspired by Make, designed for modern workflows.
