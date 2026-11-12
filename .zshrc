@@ -39,18 +39,8 @@ bindkey '\C-n' history-beginning-search-forward
 bindkey '\C-f' forward-char
 bindkey '\C-b' backward-char
 
-export NVM_DIR="$HOME/.nvm"
-# Put the newest installed node on PATH directly (your default alias is "node" = newest),
-# and load nvm itself only when you actually call it (saves 0.31s per shell).
-_nvm_newest=$(command ls "$NVM_DIR/versions/node" 2>/dev/null | sort -V | tail -1)
-[ -n "$_nvm_newest" ] && export PATH="$NVM_DIR/versions/node/$_nvm_newest/bin:$PATH"
-unset _nvm_newest
-nvm() {
-  unfunction nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  nvm "$@"
-}
+# Node via fnm; auto-switches on cd using .node-version / .nvmrc.
+command -v fnm >/dev/null && eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi

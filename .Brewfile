@@ -42,6 +42,8 @@ brew "exiftool"
 brew "tesseract"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Fast and simple Node.js version manager
+brew "fnm"
 # GitHub command-line tool
 brew "gh"
 # Quickly rewrite git repository history
