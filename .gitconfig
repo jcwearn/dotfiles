@@ -4,7 +4,7 @@
 [user]
 	name = Jackson Wearn
 	email = jcwearn@users.noreply.github.com
-	signingkey = /Users/jackson/.ssh/id_ed25519.pub
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLZt9iBOy2+W3Wf4MPncRoICbEHkBblzNcwiGp23GAH
 [github]
 	user = jcwearn
 [gpg]
