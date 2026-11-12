@@ -2,7 +2,9 @@ tap "cloudflare/cloudflare"
 tap "coder/coder"
 tap "fluxcd/tap"
 tap "go-task/tap"
+tap "hashicorp/tap"
 tap "kubescape/tap"
+tap "terraform-linters/tap"
 tap "weaveworks/tap"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
@@ -96,10 +98,6 @@ brew "sops"
 brew "stern"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
-# Tool to build, change, and version infrastructure
-brew "terraform"
-# Linter for Terraform files
-brew "tflint"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -120,8 +118,12 @@ brew "yq"
 brew "yadm"
 # Utility to export your existing Cloudflare resources as Terraform resources
 brew "cloudflare/cloudflare/cf-terraforming", trusted: true
+# Terraform (removed from homebrew-core after the BUSL relicense; official HashiCorp tap)
+brew "hashicorp/tap/terraform", trusted: true
 # A fast, cross-platform build tool inspired by Make, designed for modern workflows.
 cask "go-task/tap/go-task", trusted: true
+# Linter for Terraform files (distributed as a cask from the project's own tap)
+cask "terraform-linters/tap/tflint", trusted: true
 vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "buenon.scratchpads"
