@@ -313,10 +313,9 @@
  ;; If there is more than one, they won't work right.
  '(git-messenger:use-magit-popup t)
  '(package-selected-packages
-   (quote
-    (groovy-mode neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode)))
- '(tabbar-separator (quote (0.5)))
- '(xref-js2-ignored-dirs (quote ("bower_components" "node_modules" "build"))))
+   '(groovy-mode neotree multi-web-mode multi-term json-mode js2-mode ido-ubiquitous hlinum elixir-mode clojure-mode))
+ '(tabbar-separator '(0.5))
+ '(xref-js2-ignored-dirs '("bower_components" "node_modules" "build")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
