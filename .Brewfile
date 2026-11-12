@@ -124,6 +124,8 @@ brew "hashicorp/tap/terraform", trusted: true
 cask "go-task/tap/go-task", trusted: true
 # Linter for Terraform files (distributed as a cask from the project's own tap)
 cask "terraform-linters/tap/tflint", trusted: true
+# Mesh VPN for homelab access
+cask "tailscale-app"
 vscode "anthropic.claude-code"
 vscode "bradlc.vscode-tailwindcss"
 vscode "buenon.scratchpads"
