@@ -1,0 +1,3 @@
+.DS_Store
+# Untracked leftovers from the removed Emacs config (see the "Restore Emacs config" issue)
+.emacs.d/

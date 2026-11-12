@@ -28,20 +28,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cls="clear"
 alias ls="ls -lartGh"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias ducks='du -cks * | sort -rn | head'
-alias decodify="node -e \"try {console.log(JSON.parse(decodeURIComponent(new Buffer(process.argv[1], 'base64'))))} catch (e) { console.log('Failed to parse input')}\""
-alias showfiles="defaults write com.apple.finder AppleShowAllFiles TRUE"
-alias hidefiles="defaults write com.apple.finder AppleShowAllFiles FALSE"
-alias gradlew="/Users/jacksonwearn/Documents/cnn/metabuild/gradlew"
+alias k=kubectl
 
-set -g default-terminal "screen-256color"
 export TERM=xterm-256color
 export EDITOR=emacs
 
@@ -49,13 +38,6 @@ bindkey '\C-p' history-beginning-search-backward
 bindkey '\C-n' history-beginning-search-forward
 bindkey '\C-f' forward-char
 bindkey '\C-b' backward-char
-
-# Set up zsh to work properly within emacs.  Taken from https://stackoverflow.com/questions/367442/getting-emacs-ansi-term-and-zsh-to-play-nicely
-if [ -n "$INSIDE_EMACS" ]; then
-    chpwd() { print -P "\033AnSiTc %d" }
-    print -P "\033AnSiTu %n"
-    print -P "\033AnSiTc %d"
-fi
 
 export NVM_DIR="$HOME/.nvm"
 # Put the newest installed node on PATH directly (your default alias is "node" = newest),
@@ -69,25 +51,6 @@ nvm() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   nvm "$@"
 }
-
-export ALTERNATE_EDITOR="/opt/homebrew/opt/emacs/bin/emacs --daemon=$UUID"
-EMACSCLIENT="/opt/homebrew/opt/emacs/bin/emacsclient -nw --socket-name=$UUID"
-
-# alias emacs=$EMACSCLIENT
-# alias emcas=$EMACSCLIENT
-# alias ecmas=$EMACSCLIENT
-# alias enacs=$EMACSCLIENT
-# alias emasc=$EMACSCLIENT
-# alias eamcs=$EMACSCLIENT
-# alias emac=$EMACSCLIENT
-alias k=kubectl
-
-# export EDITOR=$EMACSCLIENT
-# export VISUAL=$EDITOR
-
-#. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jackson/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jackson/google-cloud-sdk/path.zsh.inc'; fi
@@ -106,8 +69,6 @@ source <(kubectl completion zsh)
 export SOPS_AGE_KEY_FILE=/Users/jackson/.age/age.key
 export AGE_PUBLIC_KEY=age1ssrlddcqe0jrh2g3038538wuk6uzegz49gyvak2elm7rh2ccj3pq8vnz7t
 
-export KVVERSION="v0.9.0"
-alias kube-vip="docker run --network host --rm ghcr.io/kube-vip/kube-vip:$KVVERSION"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Machine-local secrets/overrides (untracked).

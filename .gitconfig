@@ -1,15 +1,10 @@
 [alias]
     co = checkout
     st = status
-    #https://stackoverflow.com/a/29072745/2606879
-    all = "!f() { ls | xargs -I{} git -C {} $1; }; f"
-    undo = "!f(){ EXIT_CODE=0 && git stash | grep -q \"No local changes to save\" || EXIT_CODE=1 && git reset --hard HEAD~1 && if(( $EXIT_CODE == 1 )); then git stash pop; fi; };f"
 [user]
 	name = Jackson Wearn
 	email = jcwearn@users.noreply.github.com
 	signingkey = /Users/jackson/.ssh/id_ed25519.pub
-[core]
-	excludesfile = ~/.gitignore_global
 [github]
 	user = jcwearn
 [gpg]
